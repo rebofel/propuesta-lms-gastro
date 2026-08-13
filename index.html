@@ -333,6 +333,49 @@
   }
   .validez-line strong{color:var(--teal)}
 
+  /* ---------- Cobros con varios docentes ---------- */
+  .cobros-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+
+  /* ---------- Financiación ---------- */
+  .fin-block{margin-bottom:26px;min-width:0}
+  .fin-title{font-size:1.08rem;margin-bottom:6px}
+  .fin-sub{font-size:.93rem;color:var(--muted);margin-bottom:18px}
+  .fin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;min-width:0}
+  .fin-card{
+    background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);
+    padding:24px 22px;display:flex;flex-direction:column;min-width:0;
+  }
+  .fin-tag{
+    display:inline-block;align-self:flex-start;font-size:.72rem;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--purple);background:var(--lila);
+    padding:4px 12px;border-radius:999px;margin-bottom:11px;
+  }
+  .fin-card h4{font-size:1.02rem;margin-bottom:10px}
+  .fin-card>p{font-size:.92rem;color:var(--muted);margin-bottom:15px}
+  .fin-steps{list-style:none;display:grid;gap:9px;margin-bottom:15px}
+  .fin-steps li{
+    display:flex;align-items:baseline;gap:13px;background:var(--white);
+    border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 15px;
+    flex-wrap:wrap;min-width:0;
+  }
+  .fin-monto{font-weight:800;color:var(--purple);font-size:1.02rem;flex-shrink:0;min-width:78px}
+  .fin-cuando{font-size:.88rem;color:var(--muted);min-width:0}
+  .fin-nota{font-size:.85rem;color:var(--muted);line-height:1.55;margin-top:auto}
+  .cuotas-wrap{overflow-x:auto;margin-bottom:14px;max-width:100%;-webkit-overflow-scrolling:touch}
+  .cuotas{
+    width:100%;border-collapse:collapse;background:var(--white);
+    border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.88rem;
+  }
+  .cuotas th{
+    background:var(--lila);color:var(--purple-deep);font-size:.7rem;letter-spacing:.08em;
+    text-transform:uppercase;text-align:left;padding:9px 14px;white-space:nowrap;
+  }
+  .cuotas td{padding:9px 14px;border-top:1px solid var(--border);white-space:nowrap}
+  .cuotas td:first-child{font-weight:800;color:var(--slate)}
+  .cuotas td:nth-child(2){font-weight:700;color:var(--body)}
+  .cuotas th:last-child,.cuotas td:last-child{text-align:right;color:var(--muted)}
+  .cuotas tr.destacada td{background:rgba(0,200,150,.07)}
+
   /* ---------- Qué necesitamos ---------- */
   .need-list{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px}
   .need-item{
@@ -381,11 +424,12 @@
     .enfasis-grid{grid-template-columns:1fr}
     .timeline{grid-template-columns:repeat(2,1fr)}
     .dev-grid{grid-template-columns:1fr}
+    .fin-grid{grid-template-columns:1fr}
   }
   @media (max-width: 640px){
     section{padding:52px 0}
     .hero{padding:56px 0 60px}
-    .scope-grid,.ux-grid,.need-list,.incluye-grid,.timeline{grid-template-columns:1fr}
+    .scope-grid,.ux-grid,.need-list,.incluye-grid,.timeline,.cobros-grid{grid-template-columns:1fr}
     .dev-stats{grid-template-columns:1fr;gap:10px}
     .browser-mock iframe{height:480px}
     .precio-card{padding:28px 20px}
@@ -412,11 +456,11 @@
   <div class="container">
     <span class="badge-validez">
       <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Validez: 10 días — hasta 21/07/2026
+      Validez: 10 días — hasta 23/08/2026
     </span>
     <h1>Propuesta de desarrollo — <span class="grad">Plataforma de cursos online</span></h1>
     <p class="cliente">Preparada para la <strong>Dra. Renata y equipo</strong> — cursos de gastroenterología para profesionales de Latinoamérica.</p>
-    <p class="fecha">Emitida el 11/07/2026 · Felipe Ignacio Rebolledo · INCBA</p>
+    <p class="fecha">Emitida el 13/08/2026 · Felipe Ignacio Rebolledo · INCBA</p>
     <div class="hero-chips">
       <span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
@@ -577,6 +621,42 @@
   </div>
 </section>
 
+<!-- ================= VARIOS DOCENTES Y COBROS ================= -->
+<section class="section-soft" id="cobros">
+  <div class="container">
+    <span class="kicker">Varios docentes, varios cursos</span>
+    <h2 class="section-title">Cómo se cobra cuando enseñan varios profesionales</h2>
+    <p class="section-lead">Nos preguntaron qué pasa cuando distintos gastroenterólogos dictan y venden sus propios cursos dentro de la misma plataforma. Así lo resuelve esta propuesta.</p>
+
+    <div class="cobros-grid">
+      <div class="scope-card reveal">
+        <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4h-4z"/></svg></div>
+        <h3>Un solo circuito de cobro</h3>
+        <p>Todas las ventas, de todos los cursos y de todos los docentes, entran por las cuentas de la escuela: <strong>una cuenta de Mercado Pago y una de PayPal</strong>, más dLocal Go para el resto de Latinoamérica. Un solo lugar para conciliar, facturar y controlar.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9M13 17V5M8 17v-3"/></svg></div>
+        <h3>La plataforma dice cuánto vendió cada curso</h3>
+        <p>Reportes de ventas <strong>por curso y por docente</strong>: cuántos alumnos se inscribieron, cuánto facturó cada curso y en qué período. Ustedes ven en la plataforma exactamente cuánto le corresponde a cada uno, sin llevar planillas aparte.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Docentes y cursos ilimitados</h3>
+        <p>Pueden sumar <strong>todos los gastroenterólogos y todos los cursos que quieran</strong>, sin pagar nada adicional por curso ni por docente. Cada docente tiene su perfil, sus cursos y sus alumnos dentro del mismo campus.</p>
+      </div>
+      <div class="scope-card reveal">
+        <div class="scope-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg></div>
+        <h3>La liquidación la definen ustedes</h3>
+        <p>Con el reporte en la mano, la escuela le transfiere a cada docente lo que le corresponde según el acuerdo que tengan: porcentaje, monto fijo o lo que definan. <strong>La plataforma calcula y muestra; la decisión y el pago quedan de su lado.</strong></p>
+      </div>
+    </div>
+
+    <div class="lms-note reveal" style="margin-top:32px;margin-bottom:0;max-width:100%">
+      <strong>¿Y si quieren que cada docente cobre en su propia cuenta?</strong> Que el dinero entre <em>directo</em> a la cuenta de Mercado Pago de cada gastroenterólogo, sin pasar nunca por la cuenta de la escuela, es un esquema distinto —del tipo <em>marketplace</em>— que requiere desarrollo específico y <strong>no está incluido en esta propuesta</strong>. Es una evolución natural de esta plataforma: la analizamos y la cotizamos por separado cuando quieran dar ese paso.
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROTOTIPO LANDING ================= -->
 <section id="prototipo">
   <div class="container">
@@ -719,7 +799,7 @@
           <div class="valor">USD 1.200</div>
           <div class="llave">llave en mano — proyecto completo</div>
         </div>
-        <div class="precio-pago">Forma de pago: 50% al inicio, 50% contra entrega</div>
+        <div class="precio-pago">Financiación disponible: 3 pagos sin interés<br>o hasta 12 cuotas con Mercado Pago</div>
       </div>
 
       <div class="incluye-grid">
@@ -741,14 +821,50 @@
         </div>
       </div>
 
-      <div class="pesos-note">
-        <strong>Pagos en pesos argentinos:</strong> se toma la cotización del <strong>dólar VENTA del Banco Nación</strong> (<a href="https://www.bna.com.ar/Cotizador/MonedasHistorico" target="_blank" rel="noopener">ver cotización oficial</a>) <strong>al momento del pago</strong>.
+      <div class="fin-block">
+        <h3 class="fin-title">Cómo pueden pagarlo</h3>
+        <p class="fin-sub">Dos formas de financiación, a elección de ustedes.</p>
+
+        <div class="fin-grid">
+          <div class="fin-card">
+            <span class="fin-tag">Opción 1</span>
+            <h4>En 3 pagos, sin interés</h4>
+            <ul class="fin-steps">
+              <li><span class="fin-monto">USD 500</span><span class="fin-cuando">Al inicio — con este pago arranca el proyecto</span></li>
+              <li><span class="fin-monto">USD 350</span><span class="fin-cuando">A los 30 días del arranque</span></li>
+              <li><span class="fin-monto">USD 350</span><span class="fin-cuando">A los 60 días del arranque</span></li>
+            </ul>
+            <p class="fin-nota"><strong>Sin recargo:</strong> los tres pagos suman exactamente los USD 1.200. Se pueden abonar en pesos, tomando el valor del <strong>dólar oficial al momento de facturar</strong> cada pago (<a href="https://www.bna.com.ar/Cotizador/MonedasHistorico" target="_blank" rel="noopener">cotización Banco Nación</a>).</p>
+          </div>
+
+          <div class="fin-card">
+            <span class="fin-tag">Opción 2</span>
+            <h4>Link de pago de Mercado Pago — hasta 12 cuotas</h4>
+            <p>Les enviamos un link de pago y abonan con tarjeta, en la cantidad de cuotas que les ofrezca su tarjeta. Las cuotas tienen el recargo que aplica Mercado Pago.</p>
+            <div class="cuotas-wrap">
+              <table class="cuotas">
+                <thead>
+                  <tr><th>Cuotas</th><th>Valor por cuota</th><th>Total</th></tr>
+                </thead>
+                <tbody>
+                  <tr class="destacada"><td>1x</td><td>$ 1.818.000,00</td><td>sin recargo</td></tr>
+                  <tr><td>2x</td><td>$ 1.061.257,50</td><td>$ 2.122.515,00</td></tr>
+                  <tr><td>3x</td><td>$ 725.321,40</td><td>$ 2.175.964,20</td></tr>
+                  <tr><td>6x</td><td>$ 400.384,20</td><td>$ 2.402.305,20</td></tr>
+                  <tr><td>9x</td><td>$ 289.809,40</td><td>$ 2.608.284,60</td></tr>
+                  <tr><td>12x</td><td>$ 235.415,85</td><td>$ 2.824.990,20</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="fin-nota"><strong>Valores de referencia.</strong> El recargo por cuotas lo define Mercado Pago y <strong>varía según la tarjeta</strong>; el monto final se recalcula al generar el link, con la cotización de ese día. Las <strong>tarjetas de crédito emitidas por Mercado Pago suelen ofrecer cuotas sin interés</strong>.</p>
+          </div>
+        </div>
       </div>
 
       <div class="transfer-card">
         <h3>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-          Datos para la transferencia
+          Datos para la transferencia (Opción 1)
         </h3>
         <div class="transfer-rows">
           <div class="transfer-row">
@@ -775,7 +891,7 @@
       </div>
     </div>
 
-    <p class="validez-line">Propuesta emitida el <strong>11/07/2026</strong> · Validez: <strong>10 días — hasta el 21/07/2026</strong>.</p>
+    <p class="validez-line">Propuesta emitida el <strong>13/08/2026</strong> · Validez: <strong>10 días — hasta el 23/08/2026</strong>.</p>
   </div>
 </section>
 
@@ -841,7 +957,7 @@
       <div class="footer-contact">
         <div>Felipe Ignacio Rebolledo · <a href="mailto:felipe@incba.com.ar">felipe@incba.com.ar</a></div>
         <div><a href="https://incba.com.ar" target="_blank" rel="noopener">incba.com.ar</a></div>
-        <div class="footer-validez">Propuesta emitida el 11/07/2026 · Validez: 10 días — hasta el 21/07/2026</div>
+        <div class="footer-validez">Propuesta emitida el 13/08/2026 · Validez: 10 días — hasta el 23/08/2026</div>
       </div>
     </div>
     <div class="footer-bottom">© 2026 INCBA — Propuesta de desarrollo: Plataforma de cursos online para la Dra. Renata y equipo.</div>
